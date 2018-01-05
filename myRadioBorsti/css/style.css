@@ -1,0 +1,430 @@
+/* General */
+body{
+    margin: 0;
+    font-size: 1em;
+    font-family: Verdana, Geneva, sans-serif;
+    background: url('../images/bg.jpg') repeat;
+}
+header{
+    top: 0;
+	position: fixed;
+    width: 100%;
+    height: 3em;
+    padding: 1em;
+    color: #fff;
+    background-image: url('../images/bg_h.jpg');
+    z-index: 996;
+}
+.menu{
+    display: none;
+    z-index: 998;
+}
+.menuLabel{
+    display: none;
+    background-image: url('../images/menu.png');
+    background-size: 100%;
+    width: 2em;
+    height: 2em;
+    position: fixed;
+    top: 1.3em;
+    right: 1.3em;
+    text-align: center;
+    cursor: pointer;
+    z-index: 998;
+}
+.menu[type=checkbox]:checked + label + nav{
+    display: block;
+}
+nav{
+    width: 100%;
+    top: 5em;
+	position: fixed;
+    background-color: rgba(0,0,0,0.8);
+    /* Shadow */
+    -webkit-box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6);
+    box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6);
+    z-index: 997;
+}
+nav ul{
+    margin: 0.5em;
+    padding: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+}
+nav li{
+    margin: 0;
+    display: inline-block;
+    padding: 0 1em 0 1em;
+}
+nav a{
+    text-decoration: none;
+    color: #fff;
+}
+nav li:hover{
+    background-color: rgba(160,40,30,0.6);
+    -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0.45);
+    -moz-box-shadow: 0 0 0 0 rgba(0,0,0,0.45);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.45);
+}
+nav li:active{
+    background-color: rgba(160,40,30,0.85);
+    -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0.45);
+    -moz-box-shadow: 0 0 0 0 rgba(0,0,0,0.45);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.45);
+}
+section{
+    margin: 8em 0 0 0;
+    /* margin: 8em 0 0 1em */
+}
+footer{
+    margin: 0 1em;
+    height: 6em;
+}
+.logo{
+    padding: 0.5em;
+    width: 40%;
+    max-width: 300px;
+    min-width: 180px;
+}
+.error{
+    padding: 10em 2em 10em 2em;
+    background-color: rgba(200,0,0,0.5);
+    font-size: 18px;
+}
+.error-short{
+    padding: 1em 1em 1em 1em;
+    background-color: rgba(150,0,0,0.6);
+    margin: 0 auto;
+    width: 80%;
+    min-height: 4em;
+    z-index: 999;
+    position: absolute;
+    font-size: 16px;
+}
+.info-short{
+    padding: 1em 1em 1em 1em;
+    background-color: rgba(120,180,0,0.8);
+    margin: 0 auto;
+    width: 80%;
+    min-height: 4em;
+    z-index: 999;
+    position: absolute;
+    font-size: 16px;
+}
+#settings{
+    display: none;
+}
+#favorites{
+    display: none;
+}
+.about{
+    width: 100%;
+    display: block;
+}
+
+/* PlayBar */
+.bar{
+    display: none;
+    color: #DDD;
+    width: 100%;
+    height: 6em;
+    background-color: rgba(0,0,0,0.8);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    /* Shadow */
+    -webkit-box-shadow: 0 -8px 8px -6px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 -8px 8px -6px rgba(0,0,0,0.6);
+    box-shadow: 0 -8px 8px -6px rgba(0,0,0,0.6);
+}
+.bar-wrp{
+    padding: 1.5em;
+    min-width: 280px;
+    margin: 0 auto;
+}
+.bar-img {
+    float: left;
+    width: 7em;
+    height: 6em;
+}
+.bar-btn{
+    width: 4em;
+    height: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0.5em;
+    border: 0;
+    color: #CCC;
+    background-color: #C12E2A;
+    /* Shadow */
+    -webkit-box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6);
+    box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6);
+}
+.bar-audio{
+    float: right;
+    width: 10em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+/* Radio list */
+.radio-wrp{
+    width: 100%;
+    display: block;
+}
+.radio-elmnt{
+    width: 100%;
+    height: 4em;
+    display: block;
+}
+.radio-click-wrp{
+    width: 70%;
+    position: absolute;
+    left: 4em;
+    height: 4em;
+    display: inline;
+}
+.radio-img{
+    width: 4em;
+    height: 4em;
+    padding-right: 2em;
+}
+.radio-fav{
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 4em;
+    height: 4em;
+    padding-right: 2em;
+    opacity: 0.7;
+}
+.radio-img:hover+ .radio-fav{
+    display: inline;
+}
+.radio-fav:hover{
+    display: inline;
+}
+.radio-text{
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+    border: 0;
+    padding: 1.8em 1em 1em 1em;
+    font-size: 14px;
+    opacity: 0.8;
+}
+.radio-title{
+    font-size: 16px;
+    padding: 1.5em 1em 1em 1em;
+    opacity: 1;
+}
+.radio-state{
+    width: 0.7em;
+    height: 0.7em;
+    vertical-align: top;
+    padding: 1.8em 1em 1em 1em;
+}
+.radio-add{
+    float: right;
+    display: inline-block;
+    padding-right: 1em;
+    padding-top: 1.3em;
+}
+.radio-add-btn{
+    float: right;
+    width: 2em;
+}
+.radio-icon{
+    float: right;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+    border: 0;
+    padding-right: 0.2em;
+}
+.radio-icon-img{
+    width: 1.3em;
+    height: 1.3em;
+    vertical-align: top;
+    padding-top: 1.3em;
+}
+
+/* Filter */
+.filter-wrp{
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    display: block;
+    background-color: rgba(128,128,128,0.9);
+    padding: 1em 0 1em 0;
+}
+.filter-input{
+    width: 6em;
+    height: 1.3em;
+    display: inline;
+}
+.filter-input-srch{
+    width: 8em;
+    height: 1.8em;
+    display: inline;
+}
+.filter-select{
+    width: 8em;
+    height: 1.8em;
+    display: inline;
+}
+.filter-select-wrp{
+    display: inline-block;
+    padding-left: 2em;
+    padding-top: 0.2em;
+}
+.filter-button{
+    width: 4em;
+    height: 1.8em;
+    display: inline;
+}
+
+/* Page */
+.page{
+    padding: 0.5em 0 0 0.5em;
+    font-size: 20px;
+    display: block;
+    float: right;
+}
+.page-btn{
+    background-color: rgb(160,160,160);
+    width: 2em;
+    height: 2em;
+    margin-right: 0.5em;
+    display: inline;
+    border: 0;
+}
+
+/* Setting */
+.setting{
+    color: #fff;
+    padding: 3em;
+    font-size: 14px;
+    margin: 15% auto;
+    width: 60%;
+    display: block;
+    background-color: rgba(0,0,0,0.4);
+    /* Shadow */
+    -webkit-box-shadow: 0 0 12px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 12px -2px rgba(0,0,0,0.75);
+    box-shadow: 0 0 12px -2px rgba(0,0,0,0.75);
+}
+.setting-btn{
+    width: 9em;
+    height: 1.8em;
+    margin-right: 0.2em;
+    display: inline;
+}
+
+/* Login */
+.login{
+    color: #fff;
+    padding: 3em;
+    font-size: 14px;
+    margin: 15% auto;
+    width: 60%;
+    display: block;
+    background-color: rgba(0,0,0,0.4);
+    /* Shadow */
+    -webkit-box-shadow: 0 0 12px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 12px -2px rgba(0,0,0,0.75);
+    box-shadow: 0 0 12px -2px rgba(0,0,0,0.75);
+}
+.login-input-wrp{
+    padding: 1em 0 1em 1em;
+    display: inline-block;
+}
+.login-input{
+    width: 8em;
+    height: 1.3em;
+    display: inline;
+}
+.login-button-wrp{
+    display: inline-block;
+    padding-left: 1em;
+}
+.login-button{
+    width: 8.3em;
+    height: 1.8em;
+    display: inline;
+}
+
+/* About */
+.about-wrp a{
+    font-size: 18px;
+    padding: 1em;
+}
+.about-wrp p{
+    font-size: 14px;
+    padding: 2em;
+    float: left;
+}
+.about-wrp img{
+    padding: 1em;
+    float: left;
+    width: 90%;
+    max-width: 864px;
+}
+
+/* Responsive */
+@media only all and (max-width: 248px){
+   .wrapper{
+        opacity: 0;
+    }
+    body{
+        background-image: none;
+    }
+    body::before{
+        content: 'Device or resolution is not supported!';
+    }
+}
+@media only all and (min-width: 249px) and (max-width: 799px){
+    header{
+        /* Shadow */
+        -webkit-box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6);
+        -moz-box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6);
+        box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6);
+    }
+    nav{
+        display: none;
+    }
+    nav li{
+        width: 100%;
+        padding: 0.25em;
+    }
+    .menuLabel{
+        display: block;
+    }
+    section{
+        margin: 6em 0 0 0;
+    }
+}
+@media only all and (min-width: 2000px){
+    .wrapper{
+        width: 2000px;
+        margin: 0 auto;
+    }
+    header{
+        left: 50%;
+        margin-left: -1000px;
+        width: calc(2000px - 2em);
+    }
+    nav{
+        left: 50%;
+        margin-left: -1000px;
+        width: 2000px;
+    }
+    .bar{
+        left: 50%;
+        margin-left: -1000px;
+        width: 2000px;
+    }
+}

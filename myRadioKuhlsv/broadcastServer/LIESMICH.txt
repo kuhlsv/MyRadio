@@ -1,0 +1,16 @@
+Kopieren Sie die Dateien dieses Ordners in einen Ordner Ihrer Wahl (z.B.: c:\...\WebSocketBroadcastServer).
+
+Dieser Server ist in PHP-Programm, d.h. eine PHP-Installation ist erforderlich. Ein Webserver wird nicht benötigt, der Broadcast-Server ist selbst ein Server.
+
+Eventuell muss die PHP-Extension für sockets freigegeben werden:
+in der Datei php.ini (auf Windows z.B. in c:\xampp\php\php.ini) muss in folgender Zeile das Semikolon in der ersten Spalte entfernt werden 
+;extension=php_sockets.dll       ändern in 
+extension=php_sockets.dll
+
+
+Wer XAMPP auf seinem Windows-Rechner hat, findet den PHP-Interpreter vermutlich unter c:\xampp\php\php
+Wenn das der Fall ist, starten Sie einfach startBroadcastServer.bat in diesem Ordner. Befindet sich der Interpreter an einem anderen Ort, passen Sie den Pfad in der .bat Datei entsprechend an.
+
+Bei einigen Betriebssystemen muss der Server als Administrator gestartet werden (rechte Maustaste: Als Admin starten ...).
+
+Ganz unten in der Datei broadcastServer.php können Sie sehen, dass der Server für localhost:8080 konfiguriert ist. Wenn Sie den Server jetzt ansprechen wollen, müssen Sie in Ihrem JS-Programm die borsti-URL durch localhost:8080 ersetzen.
